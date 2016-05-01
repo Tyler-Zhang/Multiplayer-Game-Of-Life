@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+	<title> Tyler's Game of Life </title>
+</head>
+<body>
+  <div id="cursor" style="width:20px; height:20px; position:absolute; background-color:green; userSelect:none"></div>
+	<canvas width="900" height="900" id="canvas">No Canvas support :(</canvas>
+	<div style="position:absolute;left:1000px; top:100px;">
+		<h2>Dashboad</h2>
+		
+		<input id="gridSize" type="text" placeholder="Grid Size (eg. 100,100)"/> 
+		<br/>
+		<input id="rules" type="text" placeholder="Rules (eg. 2,3/3)"/> 
+		<br/>
+		<input id="setSettings" type="button" value="Set Settings" onClick="changeSettings()"/>
+		<br/>
+		<input type="button" value="setBrush" onClick="setBrush()" style="width:200px;"/>
+		<input id="play" type="button" value="Start" onClick="playButton()" style="width:200px;"/> <br/>
+		<h5> <b>CTRL</b> - brush <b>ALT</b> - Erase
+	</div>
+  
+  <script type="text/javascript" src="scripts/main.js"/></script>
+  <script type="text/javascript" src="scripts/web.js"/></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="scripts/TweenMax.js"></script>
+  <script>
+        var socket = io();
+        loadIO(socket);
+  </script>
+
+</body>
